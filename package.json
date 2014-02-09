@@ -1,0 +1,29 @@
+{
+  "name": "ripple-wallet",
+  "version": "0.0.1",
+  "description": "A node.js library for generating a Ripple wallet.",
+  "main": "ripple/wallet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenzeiler/ripple-wallet.git"
+  },
+  "keywords": [
+    "ripple",
+    "wallet",
+    "crypto",
+    "elliptic-curve"
+  ],
+  "author": "stevenzeiler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stevenzeiler/ripple-wallet/issues"
+  },
+  "dependencies": {
+    "ripple-lib": "0.7.x"
+  },
+  "devDependencies": {
+  }
+}
