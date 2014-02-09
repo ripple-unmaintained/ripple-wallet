@@ -1,5 +1,6 @@
 var Base58 = Base58Utils = require('../lib/base58')
-var sjcl = require('ripple-lib').sjcl;
+var Ripple = require('ripple-lib');
+var sjcl = Ripple.sjcl;
 
 var RippleWallet = (function () {
   function append_int(a, i) {
@@ -63,5 +64,6 @@ RippleWallet.generate = function() {
   }
 }
 
-exports = RippleWallet;
+Ripple.Wallet = RippleWallet;
+exports.Ripple = Ripple;
 
