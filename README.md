@@ -6,6 +6,8 @@ which consists of public and secret key components.
 Beyond portability, the tool was created to isolate the cryptography
 behind wallet generation in the ripple client and ripple-lib.
 
+The algorithm for generating wallets is [described here](https://ripple.com/wiki/Account_Family).
+
 ### Usage
 
     var Ripple = require('ripple-wallet').Ripple;
