@@ -30,10 +30,13 @@ var RippleWallet = (function () {
 
       var private_gen, public_gen, i = 0;
       do {
+        // Compute the hash of the 128-bit seed and the sequence number
         private_gen = sjcl.bn.fromBits(firstHalfOfSHA512(append_int(this.seed, i)));
         i++;
+        // If the hash is equal to or greater than the SECp256k1 order, increment sequence and try agin
       } while (!sjcl.ecc.curves.c256.r.greaterEquals(private_gen));
 
+      // Compute the public generator using from the private generator on the elliptic curve
       public_gen = sjcl.ecc.curves.c256.G.mult(private_gen);
 
       var sec;
@@ -55,6 +58,7 @@ RippleWallet.generate = function() {
     sjcl.random.addEntropy(Math.random(), 32, "Math.random()");
   }
 
+  // Generate a 128-bit master key that can be used to make any number of private / public key pairs and accounts
   var masterkey = Base58.encode_base_check(33, sjcl.codec.bytes.fromBits(sjcl.random.randomWords(4)))
   address = new RippleWallet(masterkey)
 
