@@ -20,3 +20,7 @@ will generate a random, unfunded Ripple address and secret.
       address: 'r3sBHwjwAb6eFpHbCEbJmhC8scmDeqXZyZ',
       secret: 'snovmDoPbb5Y14JVA5wxtBtPgHNaP' 
     }
+    
+### Docs and Test Vectors
+
+A description of the Cryptography can be found on the [Wiki](https://ripple.com/wiki/Account_Family).
