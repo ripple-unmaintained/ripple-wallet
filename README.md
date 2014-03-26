@@ -10,17 +10,20 @@ The algorithm for generating wallets is [described here](https://ripple.com/wiki
 
 ### Usage
 
-    var Ripple = require('ripple-wallet').Ripple;
-    
-    Ripple.Wallet.generate();
+```js
+  var Wallet = require('ripple-wallet');
+  var keypair = Wallet.generate();
+```
 
 will generate a random, unfunded Ripple address and secret.
 
-    { 
-      address: 'r3sBHwjwAb6eFpHbCEbJmhC8scmDeqXZyZ',
-      secret: 'snovmDoPbb5Y14JVA5wxtBtPgHNaP' 
-    }
-    
+```js
+  {
+    address: 'r3sBHwjwAb6eFpHbCEbJmhC8scmDeqXZyZ',
+    secret: 'snovmDoPbb5Y14JVA5wxtBtPgHNaP'
+  }
+```
+
 ### Docs and Test Vectors
 
 A description of the Cryptography can be found on the [Wiki](https://ripple.com/wiki/Account_Family).
