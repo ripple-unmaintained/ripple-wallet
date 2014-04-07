@@ -1,5 +1,5 @@
 
-var Base58 = Base58Utils = require('./lib/base58')
+var Base58 = Base58Utils = require('../lib/base58')
 var Ripple = require('ripple-lib');
 var sjcl = Ripple.sjcl;
 
@@ -39,17 +39,40 @@ function computeAccountId(publicKey) {
   return accountId;
 }
 
-var seed = generateMasterSeed();
+describe("generating a ripple wallet", function() {
 
-var privateGenerator = computePrivateGenerator(seed).generator;
-var sequence = computePrivateGenerator(seed).sequence;
+  it('should generate a random seed', function(){
 
-var publicGenerator = computePublicGenerator(privateGenerator).generator;
-var subsequence = computePublicGenerator(privateGenerator).subsequence;
+    seed = generateMasterSeed();  
 
-var publicKey = computePublicKey(publicGenerator, subsequence, sequence);
+  });
 
-var accountId = computeAccountId(publicKey);
+  it('should compute a private generator', function() {
 
-console.log(accountId);
+    privateGenerator = computePrivateGenerator(seed).generator;
+    sequence = computePrivateGenerator(seed).sequence;
+
+  });
+
+  it('should compute a public generator', function() {
+
+    publicGenerator = computePublicGenerator(privateGenerator).generator;
+    subsequence = computePublicGenerator(privateGenerator).subsequence;
+
+  });
+
+  it('should compute the public key', function() {
+
+    publicKey = computePublicKey(publicGenerator, subsequence, sequence);
+
+  });
+
+  it('should compute a ripple account id', function() {
+
+    accountId = computeAccountId(publicKey);
+    console.log(accountId);
+
+  });
+
+});
 
