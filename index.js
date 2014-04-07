@@ -1,4 +1,4 @@
-var Base58 = Base58Utils = require('../lib/base58')
+var Base58 = Base58Utils = require('./lib/base58')
 var Ripple = require('ripple-lib');
 var sjcl = Ripple.sjcl;
 
@@ -47,7 +47,10 @@ var RippleWallet = (function () {
         i++;
         // If the hash is equal to or greater than the SECp256k1 order, increment the sequence and retry
       } while (!sjcl.ecc.curves.c256.r.greaterEquals(sec));
+
       // Treating this hash as a private key, compute the corresponding public key as an EC point. 
+      // Add this EC point to the public generator EC point. 
+      // The resulting point is the public key for this account. 
       var pubKey = sjcl.ecc.curves.c256.G.mult(sec).toJac().add(public_gen).toAffine();
 
       // Finally encode the EC public key as a ripple address using SHA256 and then RIPEMD160
