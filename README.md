@@ -10,10 +10,12 @@ The algorithm for generating wallets is [described here](https://ripple.com/wiki
 
 ### Usage
 
-    var Ripple = require('ripple-wallet').Ripple;
-    
-    Ripple.Wallet.generate();
+    var WalletGenerator = require('ripple-wallet').Generator;
 
+    var walletGenerator = new WalletGenerator();
+
+    walletGenerator.generate();
+    
 will generate a random, unfunded Ripple address and secret.
 
     { 
@@ -24,3 +26,4 @@ will generate a random, unfunded Ripple address and secret.
 ### Docs and Test Vectors
 
 A description of the Cryptography can be found on the [Wiki](https://ripple.com/wiki/Account_Family).
+
