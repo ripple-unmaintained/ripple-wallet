@@ -22,7 +22,16 @@ will generate a random, unfunded Ripple address and secret.
   }
   ```
 
-Or generate multiple addresses for a given secret
+### Algorithm Docs and Test Vectors
+
+A description of the Cryptography can be found on the [Wiki](https://ripple.com/wiki/Account_Family).
+
+### Experimental APIs
+
+The following have not been properly tested, and should not yet 
+be used in a live environment with real assets at stake.
+
+Generate multiple addresses for a given secret
 
   ```js
   wallet = RippleWallet.getRandom();
@@ -41,7 +50,3 @@ Will produce the output of multiple address
   ADDRESS 2: rwLTwid3FJTme2uvMfjoLCxiJsnZfkVNfq
   ```
   
-### Algorithm Docs and Test Vectors
-
-A description of the Cryptography can be found on the [Wiki](https://ripple.com/wiki/Account_Family).
-
