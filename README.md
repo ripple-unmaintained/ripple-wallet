@@ -22,6 +22,12 @@ will generate a random, unfunded Ripple address and secret.
   }
   ```
 
+### Tests
+
+Run the automated test suite, which uses test vectors from the wiki:
+
+    npm test
+
 ### Algorithm Docs and Test Vectors
 
 A description of the Cryptography can be found on the [Wiki](https://ripple.com/wiki/Account_Family).

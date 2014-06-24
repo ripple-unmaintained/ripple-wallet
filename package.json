@@ -4,7 +4,7 @@
   "description": "A node.js library for generating a Ripple wallet.",
   "main": "lib/wallet.js",
   "scripts": {
-    "test": "node test/generator_sequence.js"
+    "test": "mocha -R spec test/wallet_generator.js"
   },
   "repository": {
     "type": "git",
