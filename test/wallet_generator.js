@@ -1,5 +1,7 @@
 var assert = require('assert');
 var RippleWallet = require(__dirname+'/../lib/wallet.js');
+var PublicGenerator = require(__dirname+'/../lib/public_generator');
+var sjcl = require('sjcl');
 
 // Test vectors from the Ripple Wiki
 // https://ripple.com/wiki/Account_Family
@@ -29,7 +31,10 @@ describe('generating a ripple account', function() {
   });
 
   it('should derive a public generator function from the private key', function() {
-    assert.strictEqual(wallet.getPublicGenerator().value, PUBLIC_GENERATOR);
+    var publicGenerator = wallet.getPublicGenerator();
+    assert(publicGenerator instanceof PublicGenerator); 
+    assert(publicGenerator.value instanceof sjcl.ecc.point);
+    assert.strictEqual(publicGenerator.toString(), PUBLIC_GENERATOR);
   });
 
   it('should generate the first public key from the public generator', function() {
