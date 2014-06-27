@@ -18,6 +18,10 @@ describe('generating a ripple account', function() {
     wallet = new RippleWallet(HUMAN_SEED);
   });
 
+  it('should get the master seed from the human readable seed', function() {
+    assert.strictEqual(wallet.getSeed().value, MASTER_SEED);
+  });
+
   it('should gen the correct address from a master seed in base 58 format', function() {
     assert.strictEqual(wallet.getAddress().value, ACCOUNT_ID);
   });
@@ -30,7 +34,7 @@ describe('generating a ripple account', function() {
     assert.strictEqual(wallet.getPrivateKey().value, PRIVATE_KEY);
   });
 
-  it('should derive a public generator function from the private key', function() {
+  it('should derive a public generator elliptic curve point from the private key', function() {
     var publicGenerator = wallet.getPublicGenerator();
     assert(publicGenerator instanceof PublicGenerator); 
     assert(publicGenerator.value instanceof sjcl.ecc.point);
