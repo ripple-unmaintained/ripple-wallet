@@ -1,7 +1,7 @@
 var assert = require('assert');
-var RippleWallet = require(__dirname+'/../lib/wallet.js');
-var PublicGenerator = require(__dirname+'/../lib/public_generator');
-var sjcl = require('sjcl');
+var sjcl = require('ripple-lib').sjcl;
+var RippleWallet = require(__dirname+'/../lib/wallet.js')({ sjcl: sjcl });
+var PublicGenerator = require(__dirname+'/../lib/public_generator')({ sjcl: sjcl });
 
 // Test vectors from the Ripple Wiki
 // https://ripple.com/wiki/Account_Family
