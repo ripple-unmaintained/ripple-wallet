@@ -9,7 +9,11 @@ behind wallet generation in the ripple client and ripple-lib.
 ### Usage
 
   ```js
-  var RippleWallet = require('ripple-wallet');
+  var rippleLib = require('ripple-lib');
+  var RippleWallet = require('ripple-wallet')({
+    sjcl: rippleLib.sjcl
+  });
+
   RippleWallet.generate();
   ```
     
