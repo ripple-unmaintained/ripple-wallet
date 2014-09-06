@@ -1,6 +1,6 @@
 {
   "name": "ripple-wallet-generator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A node.js library for generating a Ripple wallet.",
   "main": "lib/wallet.js",
   "scripts": {
