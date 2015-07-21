@@ -10,7 +10,7 @@ behind wallet generation in the ripple client and ripple-lib.
 
   ```js
   var rippleLib = require('ripple-lib');
-  var RippleWallet = require('ripple-wallet')({
+  var RippleWallet = require('ripple-wallet').Wallet({
     sjcl: rippleLib.sjcl
   });
 
@@ -25,6 +25,22 @@ will generate a random, unfunded Ripple address and secret.
     secret: 'snovmDoPbb5Y14JVA5wxtBtPgHNaP' 
   }
   ```
+
+```js
+  var rippleLib = require('ripple-lib');
+  var ValidationPublicKey = require('ripple-wallet').ValidationPublicKey({
+    sjcl: rippleLib.sjcl
+  });
+
+  var validationPubKey = new ValidaionPublicKey('n9MXXueo837zYH36DvMc13BwHcqtfAWNJY5czWVbp7uYTj7x17TH')
+  ValidationPublicKey.getAddress();
+  ```
+
+will generate the associated Ripple address.
+
+```js
+  rhcfR9Cg98qCxHpCcPBmMonbDBXo84wyTn
+```
 
 ### Tests
 

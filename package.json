@@ -2,9 +2,9 @@
   "name": "ripple-wallet-generator",
   "version": "1.0.3",
   "description": "A node.js library for generating a Ripple wallet.",
-  "main": "lib/wallet.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "mocha -R spec test/wallet_generator.js"
+    "test": "mocha -R spec test/*"
   },
   "repository": {
     "type": "git",
