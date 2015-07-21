@@ -20,9 +20,6 @@
   "bugs": {
     "url": "https://github.com/ripple/ripple-wallet/issues"
   },
-  "dependencies": {
-    "elliptic": "^5.0.0"
-  },
   "devDependencies": {
     "ripple-lib": "^0.12.4"
   }
